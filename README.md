@@ -1,4 +1,4 @@
-# AMM92 NVIM
+# AMM92's Neovim
 
 [![GPL-3.0 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![State](https://img.shields.io/badge/estado-activo-brightgreen)]()
