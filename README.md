@@ -1,6 +1,6 @@
 # AMM92's Neovim
 
-[![GPL-3.0 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+[![GPL-3.0 license](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](LICENSE)
 [![State](https://img.shields.io/badge/estado-activo-brightgreen)]()
 [![System](https://img.shields.io/badge/🖥️-Linux/macOS-999999)]()
 [![Manteinance](https://img.shields.io/badge/👤-anmomu92-yellow)]()
