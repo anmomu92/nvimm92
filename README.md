@@ -1,7 +1,9 @@
 <h1 align="center">Nvimm92</h1>
 
-[![GPL-3.0 license](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](LICENSE)
-[![State](https://img.shields.io/badge/State-active-brightgreen?style=flat-square)]()
+<div align="center">
+    [![GPL-3.0 license](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](LICENSE)
+    [![State](https://img.shields.io/badge/State-active-brightgreen?style=flat-square)]()
+</div>
 
 This is my Neovim *distro* or just my personal configuration for Neovim. After being a Nvchad user for some time, once I decided to set up my own Neovim configuration from scratch. It includes the plugins I find more useful for my personal use, so it may not fit your needs in every way. Also, I am not neither a Neovim nor a Lua expert, so there may be some mistakes that I have not noticed so far. Any help is more than welcome. 
 
