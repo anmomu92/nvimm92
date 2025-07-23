@@ -1,4 +1,4 @@
-<div style="text-align:center;" font-family="Times New Romani;">
+<div style="text-align:center;">
     # NviMM92
 </div>
 
