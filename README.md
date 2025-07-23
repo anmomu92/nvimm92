@@ -17,7 +17,7 @@ This is my Neovim *distro* or just my personal configuration for Neovim. After b
 To install this Neovim configuration, just clone this repository to the default Neovim's dotfiles location.
 
 ```bash
-git clone https://github.com/anmomu92/amm92-nvim.git ~/.config/nvim && nvim
+git clone https://github.com/anmomu92/nvimm92.git ~/.config/nvim && nvim
 ```
 
 ## 🤝 Contributions
