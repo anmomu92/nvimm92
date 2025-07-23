@@ -1,6 +1,4 @@
-<div style="text-align:center;">
-    # NviMM92
-</div>
+<h1 align="center">Nvimm92</h1>
 
 [![GPL-3.0 license](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](LICENSE)
 [![State](https://img.shields.io/badge/State-active-brightgreen?style=flat-square)]()
