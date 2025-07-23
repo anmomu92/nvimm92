@@ -1,4 +1,6 @@
-# NviMM92
+<div style="text-align:center;" font-family="Times New Romani;">
+    # NviMM92
+</div>
 
 [![GPL-3.0 license](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](LICENSE)
 [![State](https://img.shields.io/badge/State-active-brightgreen?style=flat-square)]()
@@ -7,6 +9,15 @@ This is my Neovim *distro* or just my personal configuration for Neovim. After b
 
 ## ⚡ Main features
 
+### Autopairing
+
+### Bar
+
+### Colorizing
+
+### Dashboard
+
+### Colorscheme
 
 
 ## 🛠️ Installation
