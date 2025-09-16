@@ -1,6 +1,9 @@
+require("config.lazy")
+
 local api = vim.api
 local cmd = vim.cmd
 
+-- Lint file when at save
 api.nvim_create_autocmd({ "BufWritePost" }, {
   callback = function()
 
@@ -15,6 +18,14 @@ api.nvim_create_autocmd({ "BufWritePost" }, {
   end,
 })
 
+-- Update the plugins at start
+api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    require("lazy").update({ show = false })
+  end
+})
+
+-- Vertical help page
 api.nvim_create_user_command("Help", function(opts)
   cmd("vertical help " .. opts.args)
 end, { nargs = "?", complete = "help" })
