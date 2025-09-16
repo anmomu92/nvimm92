@@ -12,14 +12,24 @@ This is my Neovim *distro* or just my personal configuration for Neovim. After b
 ## ⚡ Main features
 
 ### Autopairing
+> Plugin
+> windwp/nvim-autopairs
 
 ### Bar
+> Plugin
+> romgrk/barbar.nvim
 
 ### Colorizing
+> Plugin
+> brenoprata10/nvim-highlight-colors
 
 ### Dashboard
+> Plugin
+> goolord/alpha-nvim
 
 ### Colorscheme
+> Plugin
+> ellisonleao/gruvbox.nvim
 
 
 ## 🛠️ Installation
