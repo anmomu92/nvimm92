@@ -12,25 +12,29 @@ This is my Neovim *distro* or just my personal configuration for Neovim. After b
 ## ⚡ Main features
 
 ### Autopairing
-> Plugin
-> windwp/nvim-autopairs
+> [!NOTE]
+> [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 
 ### Bar
-> Plugin
-> romgrk/barbar.nvim
+> [!NOTE]
+> [romgrk/barbar.nvim](https://github.com/romgrk/barbar.nvim)
 
 ### Colorizing
-> Plugin
-> brenoprata10/nvim-highlight-colors
+> [!NOTE]
+> [brenoprata10/nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors)
 
 ### Dashboard
-> Plugin
-> goolord/alpha-nvim
+> [!NOTE]
+> [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
 
 ### Colorscheme
-> Plugin
-> ellisonleao/gruvbox.nvim
+> [!NOTE]
+> [ellisonleao/gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim)
+My favorite colorscheme is gruvbox. It supports both light and dark themes.
 
+### Completion
+
+Snippets and such is supported in some languages.
 
 ## 🛠️ Installation
 
