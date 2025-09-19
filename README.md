@@ -16,9 +16,7 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 > [!IMPORTANT]
 > I have included a task section that lists pending tasks added through a plugin I have not finished yet.
 
-<kbd>
-    <img>src="assets/alpha-nvim.png"</img>
-</kbd>
+<img>style="border-radius: 2px;" src="assets/alpha-nvim.png"</img>
 
 ## 🧭 Basic keybindings
 | Commands | Keybinding | 
