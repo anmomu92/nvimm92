@@ -44,6 +44,21 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 | Lazygit | Alt+g |
 
 
+| Table 1 | Table 2 |
+|---------|---------|
+| 
+<table>
+  <tr><th>A</th><th>B</th></tr>
+  <tr><td>1</td><td>2</td></tr>
+</table> 
+| 
+<table>
+  <tr><th>X</th><th>Y</th></tr>
+  <tr><td>foo</td><td>bar</td></tr>
+</table> 
+|
+
+
 
 ## ⚡ Main features
 
