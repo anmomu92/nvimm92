@@ -73,7 +73,7 @@ It supports both light and dark themes. My favorite colorscheme is gruvbox as it
 
 ## 🛠️ Installation
 
-> [!IMPORTANT]
+> [!WARNING]
 > Before installing this repo, make a backup of your current config files in case you want it back.
 
 To install this Neovim configuration, just clone this repository to the default Neovim's dotfiles location.
