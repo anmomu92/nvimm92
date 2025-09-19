@@ -16,7 +16,7 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 > [!IMPORTANT]
 > I have included a task section that lists pending tasks added through a plugin I have not finished yet.
 
-<kbd>
+<kbd align="center">
     <img src="assets/alpha-nvim.png" width="400" style="border-radius:50%; border: 2px solid #000;" />
     <img src="assets/alpha-nvim-dark.png" width="400" style="border-radius:50%; border: 2px solid #fff;" />
 </kbd>
@@ -44,56 +44,6 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 | Lazygit | Alt+g |
 
 
-<div style="display: flex; margin-left: -5px; margin-right: -5px;">
-  <div style:"flex: 50%; padding: 5px;">
-    <table style:"border-collapse: collapse; border-spacing: 0; width: 100%; border: 1px solid #ddd">
-      <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Points</th>
-      </tr>
-      <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <td>Eve</td>
-        <td>Jackson</td>
-        <td>94</td>
-      </tr>
-      <tr>
-        <td>Adam</td>
-        <td>Johnson</td>
-        <td>67</td>
-      </tr>
-    </table>
-  </div>
-  <div style:"flex: 50%; padding: 5px;">
-    <table>
-      <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Points</th>
-      </tr>
-      <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <td>Eve</td>
-        <td>Jackson</td>
-        <td>94</td>
-      </tr>
-      <tr>
-        <td>Adam</td>
-        <td>Johnson</td>
-        <td>67</td>
-      </tr>
-    </table>
-  </div>
-</div>
 
 ## ⚡ Main features
 
