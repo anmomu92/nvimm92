@@ -16,10 +16,12 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 > [!IMPORTANT]
 > I have included a task section that lists pending tasks added through a plugin I have not finished yet.
 
-![Dashboard](assets/alpha-nvim.png)
+<kbd>
+    <img>src="assets/alpha-nvim.png"</img>
+</kbd>
 
 ## 🧭 Basic keybindings
-| Commands | Keybinding |
+| Commands | Keybinding | 
 | -------- | :--------: |
 | Exit | Esc |
 | Save | Ctrl+s |
@@ -39,20 +41,6 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 | Horizontal terminal | Alt+j |
 | Lazygit | Alt+g |
 
-
-<div style="display: flex; flex-wrap: nowrap; gap: 20px;">
-
-<table>
-  <tr><th>Column A</th><th>Column B</th></tr>
-  <tr><td>1</td><td>2</td></tr>
-</table>
-
-<table>
-  <tr><th>Column X</th><th>Column Y</th></tr>
-  <tr><td>foo</td><td>bar</td></tr>
-</table>
-
-</div>
 
 
 ## ⚡ Main features
