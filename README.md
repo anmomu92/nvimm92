@@ -40,6 +40,20 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 | Lazygit | Alt+g |
 
 
+<div style="display: flex; gap: 20px;">
+
+<table>
+  <tr><th>Column A</th><th>Column B</th></tr>
+  <tr><td>1</td><td>2</td></tr>
+</table>
+
+<table>
+  <tr><th>Column X</th><th>Column Y</th></tr>
+  <tr><td>foo</td><td>bar</td></tr>
+</table>
+
+</div>
+
 
 ## ⚡ Main features
 
