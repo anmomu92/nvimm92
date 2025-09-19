@@ -9,14 +9,34 @@
 
 This is my personal configuration for Neovim. After being a Nvchad user for some time, once I decided to set up my own Neovim configuration from scratch. It includes the plugins I find more useful for my personal use, so it may not fit your needs in every way. Also, I am not neither a Neovim nor a Lua expert, so there may be some mistakes that I have not noticed so far. Any help is more than welcome. 
 
-## Basic navigation
-- Toggle file explorer: `Alt+n`
-- Lazygit: `Alt+g`
-- Vertical terminal: `Alt+l`
-- Horizontal terminal: `Alt+j`
-- Move between panels: `Ctrl+{h,j,k,l}`
-- Save: `Ctrl+s`
-- Exit: `Esc`
+## Dashboard
+> [!NOTE]
+> [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
+
+![Dashboard](assets/alpha-nvim.png)
+
+## Important keybindings
+| Basic commands | Keybinding |
+| ---------- | :----------: |
+| Exit | Esc |
+| Save | Ctrl+s |
+
+| Navigation | Keybinding |
+| ---------- | :----------: |
+| Cycle through tabs | Tab |
+| Focus left window | Ctrl+h | 
+| Focus right window | Ctrl+l | 
+| Focus above window | Ctrl+k | 
+| Focus below window | Ctrl+j | 
+
+| Panels | Kybindings |
+| ------ | :----------: |
+| File explorer | Alt+n |
+| Vertical terminal | Alt+l |
+| Horizontal terminal | Alt+j |
+| Lazygit | Alt+g |
+
+
 
 ## ⚡ Main features
 
@@ -24,17 +44,15 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 > [!NOTE]
 > [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 
-### Bar
+### Top Bar
 > [!NOTE]
 > [romgrk/barbar.nvim](https://github.com/romgrk/barbar.nvim)
+
+A bar for showing the current opened buffers.
 
 ### Colorizing
 > [!NOTE]
 > [brenoprata10/nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors)
-
-### Dashboard
-> [!NOTE]
-> [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
 
 ### Colorscheme
 > [!NOTE]
