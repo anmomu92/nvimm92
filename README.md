@@ -32,7 +32,7 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 | Focus above window | Ctrl+k | 
 | Focus below window | Ctrl+j | 
 
-| Panels | Kybindings |
+| Panels | Keybinding |
 | ------ | :----------: |
 | File explorer | Alt+n |
 | Vertical terminal | Alt+l |
@@ -40,7 +40,7 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 | Lazygit | Alt+g |
 
 
-<div style="display: flex; gap: 20px;">
+<div style="display: flex; flex-wrap: nowrap; gap: 20px;">
 
 <table>
   <tr><th>Column A</th><th>Column B</th></tr>
