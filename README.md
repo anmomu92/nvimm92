@@ -44,11 +44,31 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 | Lazygit | Alt+g |
 
 
+
 <table>
-    <tr style="column-count: 3; column-span: all;"><th>A</th></tr>
-  <tr><td>Column A</td><td>Column B</td></tr>
-  <tr><td>1</td><td>2</td></tr>
+  <tr>
+    <th colspan="2" style="text-align:center;">Header 1</th>
+    <th colspan="2" style="text-align:center;">Header 2</th>
+    <th colspan="2" style="text-align:center;">Header 3</th>
+  </tr>
+  <tr>
+    <th style="text-align:center;">Sub A</th>
+    <th style="text-align:center;">Sub B</th>
+    <th style="text-align:center;">Sub C</th>
+    <th style="text-align:center;">Sub D</th>
+    <th style="text-align:center;">Sub E</th>
+    <th style="text-align:center;">Sub F</th>
+  </tr>
+  <tr>
+    <td style="text-align:center;">1</td>
+    <td style="text-align:center;">2</td>
+    <td style="text-align:center;">3</td>
+    <td style="text-align:center;">4</td>
+    <td style="text-align:center;">5</td>
+    <td style="text-align:center;">6</td>
+  </tr>
 </table>
+
 
 ## ⚡ Main features
 
