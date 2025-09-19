@@ -47,25 +47,25 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 
 <table>
   <tr>
-    <th colspan="2" style="text-align:center;">Header 1</th>
-    <th colspan="2" style="text-align:center;">Header 2</th>
-    <th colspan="2" style="text-align:center;">Header 3</th>
+    <th colspan="2" style="text-align:center;">Commands</th>
+    <th colspan="2" style="text-align:center;">Navigation</th>
+    <th colspan="2" style="text-align:center;">Windows</th>
   </tr>
   <tr>
-    <th style="text-align:center;">Sub A</th>
-    <th style="text-align:center;">Sub B</th>
-    <th style="text-align:center;">Sub C</th>
-    <th style="text-align:center;">Sub D</th>
-    <th style="text-align:center;">Sub E</th>
-    <th style="text-align:center;">Sub F</th>
+    <th style="text-align:center;">Command</th>
+    <th style="text-align:center; background-color: #ccffcc;">Keybinding</th>
+    <th style="text-align:center;">Action</th>
+    <th style="text-align:center; background-color: #ccffcc;">Keybinding</th>
+    <th style="text-align:center;">Window</th>
+    <th style="text-align:center; background-color: #ccffcc;">Keybinding</th>
   </tr>
   <tr>
-    <td style="text-align:center;">1</td>
-    <td style="text-align:center;">2</td>
-    <td style="text-align:center;">3</td>
-    <td style="text-align:center;">4</td>
-    <td style="text-align:center;">5</td>
-    <td style="text-align:center;">6</td>
+    <td style="text-align:center;">Exit</td>
+    <td style="text-align:center; background-color: #ccffcc;">Esc</td>
+    <td style="text-align:center;">Cycle tabs</td>
+    <td style="text-align:center; background-color: #ccffcc;">Tab</td>
+    <td style="text-align:center;">File explorer</td>
+    <td style="text-align:center; background-color: #ccffcc;">Alt+n</td>
   </tr>
 </table>
 
