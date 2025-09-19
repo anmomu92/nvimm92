@@ -44,30 +44,20 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 | Lazygit | Alt+g |
 
 
+<div align="center">
 
 <table>
   <tr>
-    <th colspan="2" style="text-align:center;">Commands</th>
-    <th colspan="2" style="text-align:center;">Navigation</th>
-    <th colspan="2" style="text-align:center;">Windows</th>
+    <th>Col A</th>
+    <th>Col B</th>
   </tr>
   <tr>
-    <th style="font-style: italic; text-align:center;">Command</th>
-    <th style="text-align:center; background-color: #ccffcc;">Keybinding</th>
-    <th style="font-style: italic; text-align:center;">Action</th>
-    <th style="text-align:center; background-color: #ccffcc;">Keybinding</th>
-    <th style="font-style: italic; text-align:center;">Window</th>
-    <th style="text-align:center; background-color: #ccffcc;">Keybinding</th>
-  </tr>
-  <tr>
-    <td style="font-style: italic; text-align:center;">Exit</td>
-    <td style="text-align:center; background-color: #ccffcc;">Esc</td>
-    <td style="font-style: italic; text-align:center;">Cycle tabs</td>
-    <td style="text-align:center; background-color: #ccffcc;">Tab</td>
-    <td style="font-style: italic; text-align:center;">File explorer</td>
-    <td style="text-align:center; background-color: #ccffcc;">Alt+n</td>
+    <td>1</td>
+    <td>2</td>
   </tr>
 </table>
+
+</div>
 
 
 ## ⚡ Main features
