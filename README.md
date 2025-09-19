@@ -13,11 +13,14 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 > [!NOTE]
 > [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
 
+> [!IMPORTANT]
+> I have included a task section that lists pending tasks added through a plugin I have not finished yet.
+
 ![Dashboard](assets/alpha-nvim.png)
 
-## Important keybindings
-| Basic commands | Keybinding |
-| ---------- | :----------: |
+## 🧭 Basic keybindings
+| Commands | Keybinding |
+| -------- | :--------: |
 | Exit | Esc |
 | Save | Ctrl+s |
 
@@ -44,29 +47,33 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 > [!NOTE]
 > [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 
+> [!IMPORTANT]
+> To move the character outside the enclosing characters without exiting INSERT mode, use `Ctrl+{h,l}` keybinding.
+
+Common enclosing characters are automatically closed when the opening character is typed.
+
 ### Top Bar
 > [!NOTE]
 > [romgrk/barbar.nvim](https://github.com/romgrk/barbar.nvim)
 
-A bar for showing the current opened buffers.
+This top bar shows the opened buffers in the current session.
 
-### Colorizing
+### Status Line
 > [!NOTE]
-> [brenoprata10/nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors)
+> [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
+
+A visually pleasant and informative status line. It shows information such as git status, encoding or filetype among other. It follows the gruvbox theme.
 
 ### Colorscheme
 > [!NOTE]
 > [ellisonleao/gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim)
 
-My favorite colorscheme is gruvbox. It supports both light and dark themes.
+It supports both light and dark themes. My favorite colorscheme is gruvbox as it is neither too bright in light mode nor too obscure in dark mode.
 
-### Completion
-
-Snippets and such is supported in some languages.
 
 ## 🛠️ Installation
 
-> NOTE
+> [!IMPORTANT]
 > Before installing this repo, make a backup of your current config files in case you want it back.
 
 To install this Neovim configuration, just clone this repository to the default Neovim's dotfiles location.
