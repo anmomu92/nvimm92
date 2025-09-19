@@ -44,12 +44,11 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 | Lazygit | Alt+g |
 
 
----
-versions:
-  fpt: '*'
-  ghes: '*'
-  ghec: '*'
----
+<table>
+    <tr><th>A</th></tr>
+  <tr><th>Column A</th><th>Column B</th></tr>
+  <tr><td>1</td><td>2</td></tr>
+</table>
 
 ## ⚡ Main features
 
