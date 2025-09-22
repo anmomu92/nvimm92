@@ -1,5 +1,10 @@
 local map = vim.keymap.set
+local api = vim.api.nvim_set_keymap
+local opts = { noremap=true, silent=false }
+
 local builtin = require('telescope.builtin')
+local zk = require('zk')
+local commands = require("zk.commands")
 local tema = require('func.tema')
 local diagnostico = require('func.diagnostico')
 local tareas = require('func.tareas')
@@ -12,10 +17,22 @@ function _lazygit_toggle()
   lazygit:toggle()
 end
 
+local function make_edit_fn(defaults, picker_options)
+	return function(options)
+		options = vim.tbl_extend("force", defaults, options or {})
+		zk.edit(options, picker_options)
+	end
+end
+
+-- Commands
+commands.add("ZkOrphans", make_edit_fn({ orphan = true }, { title = "Zk Orphans" }))
+commands.add("ZkRecents", make_edit_fn({ createdAfter = "2 weeks ago" }, { title = "Zk Recents" }))
+
 -- +++++ Modo inserción +++++
 map('i', "jk", "<ESC>")
 map('i', "<C-h>", "<Left>", { noremap = true, silent = true })
 map('i', "<C-l>", "<Right>", { noremap = true, silent = true })
+
 
 -- +++++ Modo normal +++++
 map('n', ';', ':', { desc = "Entrar en modo comando" })
@@ -26,7 +43,6 @@ map('n', '<leader>bb', '<cmd>bd<CR>', { desc = "Borrar búfer" })
 map("n", "<A-g>", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 map("n", "<A-j>", "<cmd>ToggleTerm direction=horizontal<cr>", { noremap = true, silent = true })
 map("n", "<A-l>", "<cmd>ToggleTerm direction=vertical size=50<cr>", { noremap = true, silent = true })
-
 
 
 -- Navegación
@@ -77,3 +93,23 @@ map('t', "<C-A-l>", "<C-\\><C-n><C-w>>")
 map('t', "<C-A-h>", "<C-\\><C-n><C-w><")
 map('t', "<C-A-j>", "<C-\\><C-n><C-w>-")
 map('t', "<C-A-k>", "<C-\\><C-n><C-w>+")
+
+
+-- +++++ zk +++++
+-- Create a new note after asking for its title.
+api("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", vim.tbl_extend("force", opts, { desc = "Create new note" }))
+
+-- Open notes.
+api("n", "<leader>zon", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", vim.tbl_extend("force", opts, { desc = "Open notes" }))
+-- Open notes associated with the selected tags.
+api("n", "<leader>zt", "<Cmd>ZkTags<CR>", vim.tbl_extend("force", opts, { desc = "Open notes associated with the selected tags" }))
+
+-- Search for the notes matching a given query.
+api("n", "<leader>zf", "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>", vim.tbl_extend("force", opts, { desc = "Search notes matching a given query" }))
+-- Search for the notes matching the current visual selection.
+api("v", "<leader>zf", ":'<,'>ZkMatch<CR>", vim.tbl_extend("force", opts, { desc = "Search notes matching the current visual selection" }))
+
+-- Show orphan notes
+api("n", "<leader>zox", "<Cmd>ZkOrphans<CR>", vim.tbl_extend("force", opts, { desc = "Open orphan notes" }))
+-- Show orphan notes
+api("n", "<leader>zor", "<Cmd>ZkRecents<CR>", vim.tbl_extend("force", opts, { desc = "Open recent notes" }))
