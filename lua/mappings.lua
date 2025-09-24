@@ -7,7 +7,7 @@ local zk = require('zk')
 local commands = require("zk.commands")
 local tema = require('func.tema')
 local diagnostico = require('func.diagnostico')
-local tareas = require('func.tareas')
+local tasks = require('func.tasks')
 local Terminal  = require('toggleterm.terminal').Terminal
 
 local lazygit = Terminal:new({ cmd = "lazygit", direction = "float", hidden = true })
@@ -57,9 +57,9 @@ map('n', '<A-8>', '<cmd>BufferGoto 8<CR>', opts)
 map('n', '<A-9>', '<cmd>BufferGoto 9<CR>', opts)
 map('n', '<A-0>', '<cmd>BufferGoto 0<CR>', opts)
 
-map('n', "<leader>tt", tema.AlternaTema, { desc = "Alternar tema", noremap = true })
-map('n', "<leader>tv", diagnostico.AlternaLineasVirtuales, { desc = 'Alternar líneas virtuales' })
--- map('n', "<leader>at", tareas.ActualizaTareas, { desc = 'Actualizar tareas' })
+map('n', "<leader>tt", tema.AlternaTema, { desc = "Switch theme", noremap = true })
+map('n', "<leader>tv", diagnostico.AlternaLineasVirtuales, { desc = 'Toggle virtual lines' })
+-- map('n', "<leader>at", tasks.UpdateTasks, { desc = 'Update tasks' })
 
 -- Telescope
 map('n', "<leader>ff", builtin.find_files, { desc = 'Telescope find files' })
