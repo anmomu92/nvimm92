@@ -1,3 +1,5 @@
+-- TODO: Translate comments and command descriptions
+
 local map = vim.keymap.set
 local api = vim.api.nvim_set_keymap
 local opts = { noremap=true, silent=false }
@@ -11,10 +13,15 @@ local tasks = require('func.tasks')
 local Terminal  = require('toggleterm.terminal').Terminal
 
 local lazygit = Terminal:new({ cmd = "lazygit", direction = "float", hidden = true })
+local taskwarrior_tui = Terminal:new({ cmd = "taskwarrior-tui", direction = "float", hidden = true })
 
 -- Functions
 function _lazygit_toggle()
   lazygit:toggle()
+end
+
+function _taskwarrior_toggle()
+	taskwarrior_tui:toggle()
 end
 
 local function make_edit_fn(defaults, picker_options)
@@ -41,6 +48,7 @@ map('n', '<TAB>', '<cmd>bn<CR>', { noremap = true, silent = true, desc = "Ir a s
 map('n', '<S-TAB>', '<cmd>bp<CR>', { desc = "Ir a anterior búfer" })
 map('n', '<leader>bb', '<cmd>bd<CR>', { desc = "Borrar búfer" })
 map("n", "<A-g>", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+map("n", "<A-t>", "<cmd>lua _taskwarrior_toggle()<CR>", {noremap = true, silent = true})
 map("n", "<A-j>", "<cmd>ToggleTerm direction=horizontal<cr>", { noremap = true, silent = true })
 map("n", "<A-l>", "<cmd>ToggleTerm direction=vertical size=50<cr>", { noremap = true, silent = true })
 

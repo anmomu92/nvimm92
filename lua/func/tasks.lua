@@ -83,6 +83,8 @@ local function SearchTasks()
 		return tasks
 end
 
+-- List projects
+
 local function shell_escape(str)
 	return "'" .. str:gsub("'", "'\\''") .. "'"
 end
