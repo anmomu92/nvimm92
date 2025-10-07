@@ -1,6 +1,6 @@
 local M = {}
 
-function M.AlternaTema()
+function M.SwitchTheme()
   if vim.o.background == "dark" then
     vim.o.background = "light"
 	vim.cmd("colorscheme gruvbox")

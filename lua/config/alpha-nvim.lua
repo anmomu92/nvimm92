@@ -23,7 +23,7 @@ local function taskwarrior_section()
     { type = "padding", val = 1 },
   }
 
-  local task_shortcut_prefix = "<leader>t"  -- e.g., <leader>t1, <leader>t2, ...
+  local task_shortcut_prefix = "<leader>"  -- e.g., <leader>t1, <leader>t2, ...
   local keymap = {}  -- store key mappings to register later
 
   local index = 1
