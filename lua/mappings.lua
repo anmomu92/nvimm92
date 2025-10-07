@@ -64,9 +64,8 @@ map('n', '<A-8>', '<cmd>BufferGoto 8<CR>', vim.tbl_extend("force", opts, { desc 
 map('n', '<A-9>', '<cmd>BufferGoto 9<CR>', vim.tbl_extend("force", opts, { desc = "Go to buffer 9" }))
 map('n', '<A-0>', '<cmd>BufferGoto 0<CR>', vim.tbl_extend("force", opts, { desc = "Go to buffer 10" }))
 
--- TODO: Rename tema function into english
-map('n', "<leader>tt", tema.AlternaTema, { desc = "Switch theme", noremap = true })
-map('n', "<leader>tv", diagnostico.AlternaLineasVirtuales, { desc = 'Toggle virtual lines' })
+map('n', "<leader>tt", tema.SwitchTheme, { desc = "Switch theme", noremap = true })
+map('n', "<leader>tv", diagnostico.SwitchVirtualLines, { desc = 'Toggle virtual lines' })
 -- map('n', "<leader>at", tasks.UpdateTasks, { desc = 'Update tasks' })
 
 -- Telescope
