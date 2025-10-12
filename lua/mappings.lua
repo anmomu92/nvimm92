@@ -7,7 +7,6 @@ local zk = require('zk')
 local commands = require("zk.commands")
 local tema = require('func.tema')
 local diagnostico = require('func.diagnostico')
-local tasks = require('func.tasks')
 local Terminal  = require('toggleterm.terminal').Terminal
 
 local lazygit = Terminal:new({ cmd = "lazygit", direction = "float", hidden = true })
@@ -66,7 +65,6 @@ map('n', '<A-0>', '<cmd>BufferGoto 0<CR>', vim.tbl_extend("force", opts, { desc 
 
 map('n', "<leader>tt", tema.SwitchTheme, { desc = "Switch theme", noremap = true })
 map('n', "<leader>tv", diagnostico.SwitchVirtualLines, { desc = 'Toggle virtual lines' })
--- map('n', "<leader>at", tasks.UpdateTasks, { desc = 'Update tasks' })
 
 -- Telescope
 map('n', "<leader>ff", builtin.find_files, { desc = 'Telescope find files' })
