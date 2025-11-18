@@ -8,6 +8,7 @@ o.number = true
 o.numberwidth = 4
 
 -- Indenting
+o.expandtab = true -- switch tabs for spaces
 o.shiftwidth = 4
 o.tabstop = 4
 o.softtabstop = 4
@@ -38,6 +39,9 @@ o.undofile = true
 o.linebreak = true
 o.title = true
 
+-- Scrolling
+o.scrolloff = 999
+o.fcs = "eob: "     -- hide ~ lines so it looks natural
 
 -- Controlar el texto virtual que aparece en el diagnóstico
 d.config({ virtual_text = false })
