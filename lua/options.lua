@@ -5,6 +5,7 @@ local d = vim.diagnostic
 
 -- Line numbers
 o.number = true
+o.relativenumber = true
 o.numberwidth = 4
 
 -- Indenting
