@@ -27,11 +27,14 @@ return {
 			events = { "BufWritePost", "BufReadPost", "InsertLeave" },
 		},
 		config = function()
-			require("config/nvim-lint")
+			require("config.nvim-lint")
 		end
 	},
 	-- mason-nvim-lint
 	{
 		"rshkarin/mason-nvim-lint",
+		config = function()
+			require("config.mason-nvim-lint")
+		end
 	},
 }
