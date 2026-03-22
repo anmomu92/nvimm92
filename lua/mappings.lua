@@ -2,6 +2,7 @@ local map = vim.keymap.set
 local api = vim.api.nvim_set_keymap
 local opts = { noremap=true, silent=false }
 
+-- IMPORTS
 local builtin = require('telescope.builtin')
 local zk = require('zk')
 local commands = require("zk.commands")
@@ -12,7 +13,7 @@ local Terminal  = require('toggleterm.terminal').Terminal
 local lazygit = Terminal:new({ cmd = "lazygit", direction = "float", hidden = true })
 local taskwarrior_tui = Terminal:new({ cmd = "taskwarrior-tui", direction = "float", hidden = true })
 
--- Functions
+-- FUNCTIONS
 function _lazygit_toggle()
   lazygit:toggle()
 end
@@ -28,10 +29,11 @@ local function make_edit_fn(defaults, picker_options)
 	end
 end
 
--- Commands
+-- COMMANDS
 commands.add("ZkOrphans", make_edit_fn({ orphan = true }, { title = "Zk Orphans" }))
 commands.add("ZkRecents", make_edit_fn({ createdAfter = "2 weeks ago" }, { title = "Zk Recents" }))
 
+-- MAPPINGS
 -- +++++ Insert mode +++++
 map('i', "jk", "<ESC>")
 map('i', "<C-h>", "<Left>", { noremap = true, silent = true })

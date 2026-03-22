@@ -25,12 +25,14 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 ## 🧭 Basic keybindings
 | Commands | Keybinding | 
 | -------- | :--------: |
-| Exit | Esc |
+| Exit nvim | Esc |
+| Exit insert mode | jk |
 | Save | Ctrl+s |
+| Delete current buffer | <leader>bb |
 
 | Navigation | Keybinding |
 | ---------- | :----------: |
-| Cycle through tabs | Tab |
+| Cycle through tabs | Tab and Shift+Tab |
 | Focus left window | Ctrl+h | 
 | Focus right window | Ctrl+l | 
 | Focus above window | Ctrl+k | 
@@ -42,6 +44,7 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 | Vertical terminal | Alt+l |
 | Horizontal terminal | Alt+j |
 | Lazygit | Alt+g |
+| Taskwarrior-tui | Alt+t |
 
 
 
