@@ -10,7 +10,7 @@ o.numberwidth = 4
 
 -- Indenting
 o.shiftwidth = 4
-o.tabstop = 4
+--o.tabstop = 4
 o.softtabstop = 4
 
 -- python
