@@ -45,7 +45,7 @@ map('n', ';', ':', { noremap = true, silent = true, desc = "Enter command mode" 
 map('n', '<ESC>', '<cmd>q<CR>', { noremap = true, silent = true, desc = "Exit nvim" })
 map('n', '<TAB>', '<cmd>bn<CR>', { noremap = true, silent = true, desc = "Go to next buffer" })
 map('n', '<S-TAB>', '<cmd>bp<CR>', { noremap = true, silent = true, desc = "Go to previous buffer" })
-map('n', '<leader>bb', '<cmd>bd<CR>', { noremap = true, silent = true, desc = "Delete current buffer" })
+map('n', '<leader>db', '<cmd>bd<CR>', { noremap = true, silent = true, desc = "Delete current buffer" })
 
 map("n", "<A-g>", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true, desc = "Open lazygit" })
 map("n", "<A-t>", "<cmd>lua _taskwarrior_toggle()<CR>", { noremap = true, silent = true, desc = "Open taskwarrior-tui" })
@@ -102,7 +102,9 @@ map('t', "<C-A-j>", "<C-\\><C-n><C-w>-", { desc = "Increase window height" })
 map('t', "<C-A-k>", "<C-\\><C-n><C-w>+", { desc = "Decrease window height" })
 
 
--- +++++ zk +++++
+-- ---------------
+-- zk
+-- ---------------
 -- Create a new note after asking for its title.
 api("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", vim.tbl_extend("force", opts, { desc = "Create new note" }))
 
@@ -120,3 +122,61 @@ api("v", "<leader>zf", ":'<,'>ZkMatch<CR>", vim.tbl_extend("force", opts, { desc
 api("n", "<leader>zox", "<Cmd>ZkOrphans<CR>", vim.tbl_extend("force", opts, { desc = "Open orphan notes" }))
 -- Show orphan notes
 api("n", "<leader>zor", "<Cmd>ZkRecents<CR>", vim.tbl_extend("force", opts, { desc = "Open recent notes" }))
+
+-- ---------------
+-- barbar
+-- ---------------
+-- Move to previous/next
+map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
+map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
+
+-- Re-order to previous/next
+map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
+map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
+
+-- Goto buffer in position...
+map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts)
+map('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', opts)
+map('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', opts)
+map('n', '<A-4>', '<Cmd>BufferGoto 4<CR>', opts)
+map('n', '<A-5>', '<Cmd>BufferGoto 5<CR>', opts)
+map('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', opts)
+map('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', opts)
+map('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', opts)
+map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', opts)
+map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
+
+-- Pin/unpin buffer
+map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
+
+-- Goto pinned/unpinned buffer
+--                 :BufferGotoPinned
+--                 :BufferGotoUnpinned
+
+-- Close buffer
+map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+
+-- Wipeout buffer
+--                 :BufferWipeout
+
+-- Close commands
+--                 :BufferCloseAllButCurrent
+--                 :BufferCloseAllButPinned
+--                 :BufferCloseAllButCurrentOrPinned
+--                 :BufferCloseBuffersLeft
+--                 :BufferCloseBuffersRight
+
+-- Magic buffer-picking mode
+map('n', '<C-p>',   '<Cmd>BufferPick<CR>', opts)
+map('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>', opts)
+
+-- Sort automatically by...
+map('n', '<leader>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
+map('n', '<leader>bn', '<Cmd>BufferOrderByName<CR>', opts)
+map('n', '<leader>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
+map('n', '<leader>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
+map('n', '<leader>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
+
+-- Other:
+-- :BarbarEnable - enables barbar (enabled by default)
+-- :BarbarDisable - very bad command, should never be used
