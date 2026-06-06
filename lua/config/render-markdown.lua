@@ -1,6 +1,7 @@
 require('render-markdown').setup({
     latex = {
         enabled = true,
+		injections = false,
         -- render_modes = false,
         converter = { 'utftex', 'latex2text' },
         highlight = 'RenderMarkdownMath',
