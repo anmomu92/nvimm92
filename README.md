@@ -23,12 +23,15 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 
 
 ## 🧭 Basic keybindings
+
+The following tables summarize and categorize the keybindings I use the most.
+
 | Commands | Keybinding | 
 | -------- | :--------: |
 | Exit nvim | Esc |
 | Exit insert mode | jk |
 | Save | Ctrl+s |
-| Delete current buffer | <leader>bb |
+| Delete current buffer | <leader>db |
 
 | Navigation | Keybinding |
 | ---------- | :----------: |
@@ -37,6 +40,9 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 | Focus right window | Ctrl+l | 
 | Focus above window | Ctrl+k | 
 | Focus below window | Ctrl+j | 
+| Focus next tab | Alt+. | 
+| Focus previous tab | Alt+, | 
+
 
 | Panels | Keybinding |
 | ------ | :----------: |
@@ -77,6 +83,11 @@ A visually pleasant and informative status line. It shows information such as gi
 
 It supports both light and dark themes. My favorite colorscheme is gruvbox as it is neither too bright in light mode nor too obscure in dark mode.
 
+### Formatting
+> [!NOTE]
+> ["stevearc/conform.nvim"](https://github.com/stevearc/conform.nvim#options)
+
+This is the most used formatter plugin for neovim. Currently, you need to manually install the different formatters via Mason. Also, do not forget to configure the plugin to your needs.
 
 ## 🛠️ Installation
 
@@ -85,7 +96,7 @@ It supports both light and dark themes. My favorite colorscheme is gruvbox as it
 
 To install this Neovim configuration, just clone this repository to the default Neovim's dotfiles location.
 
-```bash
+```
 git clone https://github.com/anmomu92/nvimm92.git ~/.config/nvim && nvim
 ```
 
