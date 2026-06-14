@@ -49,7 +49,6 @@ map('n', ';', ':', { noremap = true, silent = true, desc = "Enter command mode" 
 map('n', '<ESC>', '<cmd>q<CR>', { noremap = true, silent = true, desc = "Exit nvim" })
 map('n', '<TAB>', '<cmd>bn<CR>', { noremap = true, silent = true, desc = "Go to next buffer" })
 map('n', '<S-TAB>', '<cmd>bp<CR>', { noremap = true, silent = true, desc = "Go to previous buffer" })
-map('n', '<leader>db', '<cmd>bd<CR>', { noremap = true, silent = true, desc = "Delete current buffer" })
 
 -- panels and windows
 map("n", "<A-g>", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true, desc = "Open lazygit" })
@@ -59,8 +58,9 @@ map("n", "<A-j>", "<cmd>ToggleTerm direction=horizontal<cr>",
 map("n", "<A-l>", "<cmd>ToggleTerm direction=vertical size=50<cr>",
 	{ noremap = true, silent = true, desc = "Open terminal at right" })
 
--- files
-map("n", "<leader>db", function()
+-- files and buffers
+map('n', '<leader>db', '<cmd>bd<CR>', { noremap = true, silent = true, desc = "Delete current buffer" })
+map("n", "<leader>df", function()
 	local file = vim.fn.expand("%")
 	if vim.fn.confirm(
 			"Delete file?\n" .. file,
