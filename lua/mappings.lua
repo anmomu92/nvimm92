@@ -1,21 +1,21 @@
-local map = vim.keymap.set
-local api = vim.api.nvim_set_keymap
-local opts = { noremap=true, silent=false }
+local map             = vim.keymap.set
+local api             = vim.api.nvim_set_keymap
+local opts            = { noremap = true, silent = false }
 
 -- IMPORTS
-local builtin = require('telescope.builtin')
-local zk = require('zk')
-local commands = require("zk.commands")
-local tema = require('func.tema')
-local diagnostico = require('func.diagnostico')
-local Terminal  = require('toggleterm.terminal').Terminal
+local builtin         = require('telescope.builtin')
+local zk              = require('zk')
+local commands        = require("zk.commands")
+local tema            = require('func.tema')
+local diagnostico     = require('func.diagnostico')
+local Terminal        = require('toggleterm.terminal').Terminal
 
-local lazygit = Terminal:new({ cmd = "lazygit", direction = "float", hidden = true })
+local lazygit         = Terminal:new({ cmd = "lazygit", direction = "float", hidden = true })
 local taskwarrior_tui = Terminal:new({ cmd = "taskwarrior-tui", direction = "float", hidden = true })
 
 -- FUNCTIONS
 function _lazygit_toggle()
-  lazygit:toggle()
+	lazygit:toggle()
 end
 
 function _taskwarrior_toggle()
@@ -49,8 +49,10 @@ map('n', '<leader>db', '<cmd>bd<CR>', { noremap = true, silent = true, desc = "D
 
 map("n", "<A-g>", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true, desc = "Open lazygit" })
 map("n", "<A-t>", "<cmd>lua _taskwarrior_toggle()<CR>", { noremap = true, silent = true, desc = "Open taskwarrior-tui" })
-map("n", "<A-j>", "<cmd>ToggleTerm direction=horizontal<cr>", { noremap = true, silent = true, desc = "Open terminal at bottom" })
-map("n", "<A-l>", "<cmd>ToggleTerm direction=vertical size=50<cr>", { noremap = true, silent = true, desc = "Open terminal at right" })
+map("n", "<A-j>", "<cmd>ToggleTerm direction=horizontal<cr>",
+	{ noremap = true, silent = true, desc = "Open terminal at bottom" })
+map("n", "<A-l>", "<cmd>ToggleTerm direction=vertical size=50<cr>",
+	{ noremap = true, silent = true, desc = "Open terminal at right" })
 
 
 -- Navigation
@@ -106,21 +108,26 @@ map('t', "<C-A-k>", "<C-\\><C-n><C-w>+", { desc = "Decrease window height" })
 -- zk
 -- ---------------
 -- Create a new note after asking for its title.
-api("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", vim.tbl_extend("force", opts, { desc = "Create new note" }))
+api("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>",
+	vim.tbl_extend("force", opts, { desc = "Create new note" }))
 
 -- Open notes.
-api("n", "<leader>zon", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", vim.tbl_extend("force", opts, { desc = "Open notes" }))
+api("n", "<leader>zon", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>",
+	vim.tbl_extend("force", opts, { desc = "Open notes" }))
 -- Open notes associated with the selected tags.
-api("n", "<leader>zt", "<Cmd>ZkTags<CR>", vim.tbl_extend("force", opts, { desc = "Open notes associated with the selected tags" }))
+api("n", "<leader>zt", "<Cmd>ZkTags<CR>",
+	vim.tbl_extend("force", opts, { desc = "Open notes associated with the selected tags" }))
 
 -- Search for the notes matching a given query.
-api("n", "<leader>zf", "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>", vim.tbl_extend("force", opts, { desc = "Search notes matching a given query" }))
+api("n", "<leader>zf", "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>",
+	vim.tbl_extend("force", opts, { desc = "Search notes matching a given query" }))
 -- Search for the notes matching the current visual selection.
-api("v", "<leader>zf", ":'<,'>ZkMatch<CR>", vim.tbl_extend("force", opts, { desc = "Search notes matching the current visual selection" }))
+api("v", "<leader>zf", ":'<,'>ZkMatch<CR>",
+	vim.tbl_extend("force", opts, { desc = "Search notes matching the current visual selection" }))
 
 -- Show orphan notes
 api("n", "<leader>zox", "<Cmd>ZkOrphans<CR>", vim.tbl_extend("force", opts, { desc = "Open orphan notes" }))
--- Show orphan notes
+-- Show recent notes
 api("n", "<leader>zor", "<Cmd>ZkRecents<CR>", vim.tbl_extend("force", opts, { desc = "Open recent notes" }))
 
 -- ---------------
@@ -167,7 +174,7 @@ map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 --                 :BufferCloseBuffersRight
 
 -- Magic buffer-picking mode
-map('n', '<C-p>',   '<Cmd>BufferPick<CR>', opts)
+map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
 map('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>', opts)
 
 -- Sort automatically by...
