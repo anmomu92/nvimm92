@@ -33,20 +33,25 @@ end
 commands.add("ZkOrphans", make_edit_fn({ orphan = true }, { title = "Zk Orphans" }))
 commands.add("ZkRecents", make_edit_fn({ createdAfter = "2 weeks ago" }, { title = "Zk Recents" }))
 
--- MAPPINGS
--- +++++ Insert mode +++++
+-- -----------
+-- Insert mode
+-- -----------
 map('i', "jk", "<ESC>")
 map('i', "<C-h>", "<Left>", { noremap = true, silent = true })
 map('i', "<C-l>", "<Right>", { noremap = true, silent = true })
 
 
--- +++++ Normal mode +++++
+-- -----------
+-- Normal mode
+-- -----------
+-- navigation
 map('n', ';', ':', { noremap = true, silent = true, desc = "Enter command mode" })
 map('n', '<ESC>', '<cmd>q<CR>', { noremap = true, silent = true, desc = "Exit nvim" })
 map('n', '<TAB>', '<cmd>bn<CR>', { noremap = true, silent = true, desc = "Go to next buffer" })
 map('n', '<S-TAB>', '<cmd>bp<CR>', { noremap = true, silent = true, desc = "Go to previous buffer" })
 map('n', '<leader>db', '<cmd>bd<CR>', { noremap = true, silent = true, desc = "Delete current buffer" })
 
+-- panels and windows
 map("n", "<A-g>", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true, desc = "Open lazygit" })
 map("n", "<A-t>", "<cmd>lua _taskwarrior_toggle()<CR>", { noremap = true, silent = true, desc = "Open taskwarrior-tui" })
 map("n", "<A-j>", "<cmd>ToggleTerm direction=horizontal<cr>",
@@ -54,29 +59,42 @@ map("n", "<A-j>", "<cmd>ToggleTerm direction=horizontal<cr>",
 map("n", "<A-l>", "<cmd>ToggleTerm direction=vertical size=50<cr>",
 	{ noremap = true, silent = true, desc = "Open terminal at right" })
 
+-- files
+map("n", "<leader>db", function()
+	local file = vim.fn.expand("%")
+	if vim.fn.confirm(
+			"Delete file?\n" .. file,
+			"&Yes\n&No",
+			2
+		) == 1 then
+		vim.fn.delete(file)
+		vim.cmd("bdelete!")
+	end
+end, { desc = "Delete current file and buffer" })
 
--- Navigation
-map('n', '<A-1>', '<cmd>BufferGoto 1<CR>', vim.tbl_extend("force", opts, { desc = "Go to buffer 1" }))
-map('n', '<A-2>', '<cmd>BufferGoto 2<CR>', vim.tbl_extend("force", opts, { desc = "Go to buffer 2" }))
-map('n', '<A-3>', '<cmd>BufferGoto 3<CR>', vim.tbl_extend("force", opts, { desc = "Go to buffer 3" }))
-map('n', '<A-4>', '<cmd>BufferGoto 4<CR>', vim.tbl_extend("force", opts, { desc = "Go to buffer 4" }))
-map('n', '<A-5>', '<cmd>BufferGoto 5<CR>', vim.tbl_extend("force", opts, { desc = "Go to buffer 5" }))
-map('n', '<A-6>', '<cmd>BufferGoto 6<CR>', vim.tbl_extend("force", opts, { desc = "Go to buffer 6" }))
-map('n', '<A-7>', '<cmd>BufferGoto 7<CR>', vim.tbl_extend("force", opts, { desc = "Go to buffer 7" }))
-map('n', '<A-8>', '<cmd>BufferGoto 8<CR>', vim.tbl_extend("force", opts, { desc = "Go to buffer 8" }))
-map('n', '<A-9>', '<cmd>BufferGoto 9<CR>', vim.tbl_extend("force", opts, { desc = "Go to buffer 9" }))
-map('n', '<A-0>', '<cmd>BufferGoto 0<CR>', vim.tbl_extend("force", opts, { desc = "Go to buffer 10" }))
-
+-- toggles
 map('n', "<leader>tt", tema.SwitchTheme, { desc = "Switch theme", noremap = true })
 map('n', "<leader>tv", diagnostico.SwitchVirtualLines, { desc = 'Toggle virtual lines' })
 
--- Telescope
-map('n', "<leader>ff", builtin.find_files, { desc = 'Telescope find files' })
-map('n', "<leader>fg", builtin.live_grep, { desc = 'Telescope live grep' })
-map('n', "<leader>fb", builtin.buffers, { desc = 'Telescope buffers' })
-map('n', "<leader>fh", builtin.help_tags, { desc = 'Telescope help tags' })
 
--- +++++ Any mode +++++
+-- -------------
+-- Terminal mode
+-- -------------
+-- map('t', "<leader>q", "<C-\\><C-n>")
+map('t', "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Move to right window" })
+map('t', "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Move to left window" })
+map('t', "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Move to lower window" })
+map('t', "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Move to upper window" })
+
+map('t', "<C-A-l>", "<C-\\><C-n><C-w>>", { desc = "Increase window width" })
+map('t', "<C-A-h>", "<C-\\><C-n><C-w><", { desc = "Decrease window width" })
+map('t', "<C-A-j>", "<C-\\><C-n><C-w>-", { desc = "Increase window height" })
+map('t', "<C-A-k>", "<C-\\><C-n><C-w>+", { desc = "Decrease window height" })
+
+
+-- --------------
+-- Multiple modes
+-- --------------
 map({ 'n', 'i', 'v' }, "<C-s>", "<cmd>w<CR>", { desc = "Save file" })
 map({ 'n', 'i', 'v' }, "<A-n>", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer" })
 
@@ -91,18 +109,14 @@ map({ 'n', 'v' }, "<C-A-h>", "<C-W><", { desc = "Decrease window width" })
 map({ 'n', 'v' }, "<C-A-k>", "<C-W>+", { desc = "Increase window height" })
 map({ 'n', 'v' }, "<C-A-j>", "<C-W>-", { desc = "Decrease window height" })
 
--- +++++ Modo terminal +++++
--- map('t', "<leader>q", "<C-\\><C-n>")
-map('t', "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Move to right window" })
-map('t', "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Move to left window" })
-map('t', "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Move to lower window" })
-map('t', "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Move to upper window" })
 
-map('t', "<C-A-l>", "<C-\\><C-n><C-w>>", { desc = "Increase window width" })
-map('t', "<C-A-h>", "<C-\\><C-n><C-w><", { desc = "Decrease window width" })
-map('t', "<C-A-j>", "<C-\\><C-n><C-w>-", { desc = "Increase window height" })
-map('t', "<C-A-k>", "<C-\\><C-n><C-w>+", { desc = "Decrease window height" })
-
+-- ---------
+-- Telescope
+-- ---------
+map('n', "<leader>ff", builtin.find_files, { desc = 'Telescope find files' })
+map('n', "<leader>fg", builtin.live_grep, { desc = 'Telescope live grep' })
+map('n', "<leader>fb", builtin.buffers, { desc = 'Telescope buffers' })
+map('n', "<leader>fh", builtin.help_tags, { desc = 'Telescope help tags' })
 
 -- ---------------
 -- zk
