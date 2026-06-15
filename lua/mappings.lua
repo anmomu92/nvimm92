@@ -95,7 +95,7 @@ map("n", "<leader>zw", function()
 		-- end_pos points just after the match.
 		if col >= start_pos and col < end_pos then
 			found = true
-			return "{" .. line:sub(start_pos, end_pos - 1) .. "}"
+			return "[{" .. line:sub(start_pos + 1, end_pos - 2) .. "}]"
 		end
 	end, 1)
 
@@ -111,10 +111,10 @@ map("n", "<leader>zu", function()
 	local col = vim.fn.col(".") -- 1-based
 
 	local found = false
-	local new_line = line:gsub("()%{%[%[[^%]]-%]%]%}()", function(start_pos, end_pos)
+	local new_line = line:gsub("()%[%{%[[^%]]-%]%}%]()", function(start_pos, end_pos)
 		if col >= start_pos and col < end_pos then
 			found = true
-			return line:sub(start_pos + 1, end_pos - 2)
+			return "[" .. line:sub(start_pos + 2, end_pos - 3) .. "]"
 		end
 	end, 1)
 
