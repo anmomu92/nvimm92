@@ -6,7 +6,8 @@ local cmd = vim.cmd
 local fun = vim.fn
 local api = vim.api
 
-
+-- Function name: taskwarrior_section
+-- Purpose: creates a section within alpha-nvim to show tasks from taskwarrior 
 local function taskwarrior_section()
   local handle = io.popen("task +PENDING rc.json.array=on annotations.any: export")
   if not handle then return {} end

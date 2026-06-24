@@ -16,28 +16,41 @@ This is my personal configuration for Neovim. After being a Nvchad user for some
 > [!IMPORTANT]
 > I have included a task section that lists pending tasks added through a plugin I have not finished yet.
 
-![Dashboard](assets/alpha-nvim.png)
+<kbd>
+    <img src="assets/alpha-nvim.png" width="400" style="border-radius:50%; border: 2px solid #000;" />
+    <img src="assets/alpha-nvim-dark.png" width="400" style="border-radius:50%; border: 2px solid #fff;" />
+</kbd>
+
 
 ## 🧭 Basic keybindings
-| Commands | Keybinding |
+
+The following tables summarize and categorize the keybindings I use the most.
+
+| Commands | Keybinding | 
 | -------- | :--------: |
-| Exit | Esc |
+| Exit nvim | Esc |
+| Exit insert mode | jk |
 | Save | Ctrl+s |
+| Delete current buffer | <leader>db |
 
 | Navigation | Keybinding |
 | ---------- | :----------: |
-| Cycle through tabs | Tab |
+| Cycle through tabs | Tab and Shift+Tab |
 | Focus left window | Ctrl+h | 
 | Focus right window | Ctrl+l | 
 | Focus above window | Ctrl+k | 
 | Focus below window | Ctrl+j | 
+| Focus next tab | Alt+. | 
+| Focus previous tab | Alt+, | 
 
-| Panels | Kybindings |
+
+| Panels | Keybinding |
 | ------ | :----------: |
 | File explorer | Alt+n |
 | Vertical terminal | Alt+l |
 | Horizontal terminal | Alt+j |
 | Lazygit | Alt+g |
+| Taskwarrior-tui | Alt+t |
 
 
 
@@ -70,6 +83,11 @@ A visually pleasant and informative status line. It shows information such as gi
 
 It supports both light and dark themes. My favorite colorscheme is gruvbox as it is neither too bright in light mode nor too obscure in dark mode.
 
+### Formatting
+> [!NOTE]
+> ["stevearc/conform.nvim"](https://github.com/stevearc/conform.nvim#options)
+
+This is the most used formatter plugin for neovim. Currently, you need to manually install the different formatters via Mason. Also, do not forget to configure the plugin to your needs.
 
 ## 🛠️ Installation
 
@@ -78,7 +96,7 @@ It supports both light and dark themes. My favorite colorscheme is gruvbox as it
 
 To install this Neovim configuration, just clone this repository to the default Neovim's dotfiles location.
 
-```bash
+```
 git clone https://github.com/anmomu92/nvimm92.git ~/.config/nvim && nvim
 ```
 

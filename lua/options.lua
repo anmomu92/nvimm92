@@ -5,12 +5,13 @@ local d = vim.diagnostic
 
 -- Line numbers
 o.number = true
+o.relativenumber = true
 o.numberwidth = 4
 
 -- Indenting
 o.expandtab = true -- switch tabs for spaces
 o.shiftwidth = 4
-o.tabstop = 4
+--o.tabstop = 4
 o.softtabstop = 4
 
 -- python
