@@ -96,13 +96,13 @@ This is the most used formatter plugin for neovim. Currently, you need to manual
 
 To install this Neovim configuration, just clone this repository to the default Neovim's dotfiles location.
 
-```
+```bash
 git clone https://github.com/anmomu92/nvimm92.git ~/.config/nvim && nvim
 ```
 
 ## 🤝 Contributions
 
-Any kind of suggestion or improvement is suggested. Please, open an issue or merge request to discuss changes.
+Any kind of suggestion or improvement is appreciated. Please, open an issue or merge request to discuss changes.
 
 ## 📜 License
 
