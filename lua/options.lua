@@ -13,6 +13,9 @@ o.shiftwidth = 4
 --o.tabstop = 4
 o.softtabstop = 4
 
+o.conceallevel = 2
+o.concealcursor = "nc"
+
 -- python
 g.python3_host_prog = "/usr/bin/python3"
 
