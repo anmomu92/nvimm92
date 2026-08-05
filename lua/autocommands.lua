@@ -41,3 +41,10 @@ vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
 		end
 	end,
 })
+
+-- treesitter filetype
+vim.api.nvim_create_autocmd("FileType", {
+	callback = function(args)
+		pcall(vim.treesitter.start, args.buf)
+	end,
+})
