@@ -35,16 +35,14 @@ vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
 	group = group,
 	callback = function()
 		local line = vim.fn.line(".")
-		if line ~= last_line then
-			last_line = line
-			vim.cmd("normal! zz")
+		if line == last_line then
+			return
 		end
-	end,
-})
+		last_line = line
 
--- treesitter filetype
-vim.api.nvim_create_autocmd("FileType", {
-	callback = function(args)
-		pcall(vim.treesitter.start, args.buf)
+		local view = vim.fn.winsaveview()
+		vim.cmd("normal! zz")
+		view.topline = vim.fn.winsaveview().topline
+		vim.fn.winrestview(view)
 	end,
 })
