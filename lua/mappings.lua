@@ -36,7 +36,7 @@ commands.add("ZkRecents", make_edit_fn({ createdAfter = "2 weeks ago" }, { title
 -- -----------
 -- Insert mode
 -- -----------
-map("i", "jk", "<ESC>")
+-- map("i", "jk", "<ESC>")
 map("i", "<C-h>", "<Left>", { noremap = true, silent = true })
 map("i", "<C-l>", "<Right>", { noremap = true, silent = true })
 
@@ -45,9 +45,9 @@ map("i", "<C-l>", "<Right>", { noremap = true, silent = true })
 -- -----------
 -- navigation
 map("n", ";", ":", { noremap = true, silent = true, desc = "Enter command mode" })
-map("n", "<ESC>", "<cmd>q<CR>", { noremap = true, silent = true, desc = "Exit nvim" })
-map("n", "<TAB>", "<cmd>bn<CR>", { noremap = true, silent = true, desc = "Go to next buffer" })
-map("n", "<S-TAB>", "<cmd>bp<CR>", { noremap = true, silent = true, desc = "Go to previous buffer" })
+-- map("n", "<ESC>", "<cmd>q<CR>", { noremap = true, silent = true, desc = "Exit nvim" })
+-- map("n", "<TAB>", "<cmd>bn<CR>", { noremap = true, silent = true, desc = "Go to next buffer" })
+-- map("n", "<S-TAB>", "<cmd>bp<CR>", { noremap = true, silent = true, desc = "Go to previous buffer" })
 
 -- panels and windows
 map("n", "<A-g>", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true, desc = "Open lazygit" })
@@ -142,7 +142,7 @@ map("t", "<C-A-k>", "<C-\\><C-n><C-w>+", { desc = "Decrease window height" })
 -- --------------
 -- Multiple modes
 -- --------------
-map({ "n", "i", "v" }, "<C-s>", "<cmd>w<CR>", { desc = "Save file" })
+-- map({ "n", "i", "v" }, "<C-s>", "<cmd>w<CR>", { desc = "Save file" })
 map({ "n", "i", "v" }, "<A-n>", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer" })
 
 -- Navigation
