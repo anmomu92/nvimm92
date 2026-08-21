@@ -36,7 +36,7 @@ commands.add("ZkRecents", make_edit_fn({ createdAfter = "2 weeks ago" }, { title
 -- -----------
 -- Insert mode
 -- -----------
--- map("i", "jk", "<ESC>")
+map("i", "jk", "<ESC>")
 map("i", "<C-h>", "<Left>", { noremap = true, silent = true })
 map("i", "<C-l>", "<Right>", { noremap = true, silent = true })
 
