@@ -1,25 +1,5 @@
-vim.lsp.config('lua_ls', {
-  -- Server-specific settings. See `:help lsp-quickstart`
-  filetypes = { 'lua' },
-  settings = {
-	Lua = {
-		diagnostics = {
-			enable = false,
-		},
-	},
-    ['lua_ls'] = {},
-  },
-})
-
-vim.lsp.config('clangd', {
-	filetypes = { 'c', 'cpp' },
-	settings = {
-		['clangd'] = {},
-	},
-})
-
-vim.lsp.config('verible', {
-})
-
-vim.lsp.config('svls', {
-})
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("clangd")
+vim.lsp.enable("verible")
+vim.lsp.enable("svls")
+vim.lsp.enable("pyright")
