@@ -44,7 +44,7 @@ map("i", "<C-l>", "<Right>", { noremap = true, silent = true })
 -- Normal mode
 -- -----------
 -- navigation
-map("n", ";", ":", { noremap = true, silent = true, desc = "Enter command mode" })
+-- map("n", ";", ":", { noremap = true, silent = true, desc = "Enter command mode" })
 -- map("n", "<ESC>", "<cmd>q<CR>", { noremap = true, silent = true, desc = "Exit nvim" })
 -- map("n", "<TAB>", "<cmd>bn<CR>", { noremap = true, silent = true, desc = "Go to next buffer" })
 -- map("n", "<S-TAB>", "<cmd>bp<CR>", { noremap = true, silent = true, desc = "Go to previous buffer" })
