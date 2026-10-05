@@ -1,4 +1,5 @@
 require("config.lazy")
+local zk_user = require("func.zk-user")
 
 local api = vim.api
 local cmd = vim.cmd
@@ -11,11 +12,33 @@ api.nvim_create_autocmd({ "BufWritePost" }, {
 	end,
 })
 
--- Funtions to run when entering Vim
-api.nvim_create_autocmd("VimEnter", {
-	callback = function()
-		require("lazy").update({ show = false })
-	end
+api.nvim_create_autocmd("BufWritePost", {
+	pattern = "*.md",
+	callback = function(args)
+		local old = vim.api.nvim_buf_get_name(args.buf)
+		local dir, prefix = old:match("^(.*/)(%w+)%-[^/]*%.md$")
+		if not prefix then
+			return
+		end
+
+		local first = vim.api.nvim_buf_get_lines(args.buf, 0, 1, false)[1]
+		local title = first and first:match("^#%s+(.+)$")
+		if not title then
+			return
+		end
+
+		local slug = vim.trim(title):lower():gsub("[^%w]+", "-"):gsub("^%-", ""):gsub("%-$", "")
+		local new = dir .. prefix .. "-" .. slug .. ".md"
+		if new == old then
+			return
+		end
+
+		vim.fn.rename(old, new)
+		vim.api.nvim_buf_set_name(args.buf, new)
+		vim.cmd("silent noautocmd write!")
+
+		zk_user.update_links(vim.fs.basename(old), vim.fs.basename(new), new)
+	end,
 })
 
 -- User commands
@@ -31,7 +54,7 @@ cmd("cnoreabbrev <expr> h getcmdtype() == ':' && getcmdline() == 'h' ? 'Help' : 
 local group = vim.api.nvim_create_augroup("AutoCenter", { clear = true })
 
 local last_line = 0
-vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
 	group = group,
 	callback = function()
 		local line = vim.fn.line(".")
