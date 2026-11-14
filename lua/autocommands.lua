@@ -12,32 +12,37 @@ api.nvim_create_autocmd({ "BufWritePost" }, {
 	end,
 })
 
+-- rename markdown file and update links
 api.nvim_create_autocmd("BufWritePost", {
 	pattern = "*.md",
 	callback = function(args)
-		local old = vim.api.nvim_buf_get_name(args.buf)
-		local dir, prefix = old:match("^(.*/)(%w+)%-[^/]*%.md$")
-		if not prefix then
-			return
+		local current_dir = vim.fn.expand("%p:h")
+		local zk_dir = os.getenv("ZK_NOTEBOOK_DIR")
+		if current_dir == zk_dir then
+			local old = vim.api.nvim_buf_get_name(args.buf)
+			local dir, prefix = old:match("^(.*/)(%w+)%-[^/]*%.md$")
+			if not prefix then
+				return
+			end
+
+			local first = vim.api.nvim_buf_get_lines(args.buf, 0, 1, false)[1]
+			local title = first and first:match("^#%s+(.+)$")
+			if not title then
+				return
+			end
+
+			local slug = vim.trim(title):lower():gsub("[^%w]+", "-"):gsub("^%-", ""):gsub("%-$", "")
+			local new = dir .. prefix .. "-" .. slug .. ".md"
+			if new == old then
+				return
+			end
+
+			vim.fn.rename(old, new)
+			vim.api.nvim_buf_set_name(args.buf, new)
+			vim.cmd("silent noautocmd write!")
+
+			zk_user.update_links(vim.fs.basename(old), vim.fs.basename(new), new)
 		end
-
-		local first = vim.api.nvim_buf_get_lines(args.buf, 0, 1, false)[1]
-		local title = first and first:match("^#%s+(.+)$")
-		if not title then
-			return
-		end
-
-		local slug = vim.trim(title):lower():gsub("[^%w]+", "-"):gsub("^%-", ""):gsub("%-$", "")
-		local new = dir .. prefix .. "-" .. slug .. ".md"
-		if new == old then
-			return
-		end
-
-		vim.fn.rename(old, new)
-		vim.api.nvim_buf_set_name(args.buf, new)
-		vim.cmd("silent noautocmd write!")
-
-		zk_user.update_links(vim.fs.basename(old), vim.fs.basename(new), new)
 	end,
 })
 
